@@ -1,0 +1,134 @@
+
+using System;
+ 
+class Program
+
+{
+
+    static void Main(string[] args)
+
+    {
+
+        Console.Write("Enter the number of elements in the array: ");
+
+        int n = int.Parse(Console.ReadLine());
+ 
+        if (n < 3 || n > 104)
+
+        {
+
+            Console.WriteLine("Enter the array range between 3 to 104");
+
+            return;
+
+        }
+ 
+        int[] nums = new int[n];
+
+        Console.WriteLine("Enter the elements of the array:");
+
+        for (int i = 0; i < n; i++)
+
+        {
+
+            nums[i] = int.Parse(Console.ReadLine());
+
+            if (nums[i] > 20) {
+
+                Console.WriteLine("use it");
+
+            }
+
+        }
+ 
+     
+
+        Array.Sort(nums);
+ 
+       
+
+        int max1 = nums[n - 1] * nums[n - 2] * nums[n - 3];
+ 
+    
+
+        int max2 = nums[0] * nums[1] * nums[n - 1];
+ 
+     
+
+        int maxProduct = Math.Max(max1, max2);
+ 
+       
+
+        Console.WriteLine("The maximum product of three numbers in the array is: " + maxProduct);
+
+    }
+
+}
+ 
+[Wednesday 11:38] Shijo S
+using System;
+ 
+class Program
+
+{
+
+    static void Main(string[] args)
+
+    {
+
+        Console.Write("Enter the number of elements in the array: ");
+
+        int n = int.Parse(Console.ReadLine());
+ 
+        if (n < 3 || n > 104)
+
+        {
+
+            Console.WriteLine("Enter the array range between 3 to 104");
+
+            return;
+
+        }
+ 
+        int[] nums = new int[n];
+
+        Console.WriteLine("Enter the elements of the array:");
+
+        for (int i = 0; i < n; i++)
+
+        {
+
+            nums[i] = int.Parse(Console.ReadLine());
+
+            if (nums[i] >1000 || nums[i]<-1000) {
+
+                Console.WriteLine("please enter number between -1000 to 1000");
+
+            }
+
+        }
+ 
+     
+
+        Array.Sort(nums);
+ 
+       
+
+        int max1 = nums[n - 1] * nums[n - 2] * nums[n - 3];
+ 
+    
+
+        int max2 = nums[0] * nums[1] * nums[n - 1];
+ 
+     
+
+        int maxProduct = Math.Max(max1, max2);
+ 
+       
+
+        Console.WriteLine("The maximum product of three numbers in the array is: " + maxProduct);
+
+    }
+
+}
+ 
