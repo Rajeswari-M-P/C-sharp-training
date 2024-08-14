@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _2_integer
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+             Console.WriteLine("Enter the number of elements of array to store:");
+             int n = int.Parse(Console.ReadLine());
+             int[] nums = new int[n];
+             Console.WriteLine("Enter the array elements:");
+             for (int i = 0; i < n; i++)
+             {
+                 nums[i] = int.Parse(Console.ReadLine());
+             }
+            Console.WriteLine("Enter the target value");
+            int target= int.Parse(Console.ReadLine());
+
+            // int[] nums = { 5, 5, 6 };
+            // int target = 10;
+
+            Console.WriteLine("The indices are:");
+            bool existed= false;
+            for (int i = 0; i < nums.Length; i++)
+            {
+                for (int j = i + 1; j < nums.Length; j++)
+                {
+
+                    if (nums[i] + nums[j] == target)
+                    {
+                       
+                        
+                             existed = true;
+                            Console.WriteLine("[" + i + "," + j + "]");
+                        break;
+                            
+                        }     
+                           
+                    }
+
+                }
+            if (existed == false)
+            {
+                Console.WriteLine("invalid");
+            }
+                Console.ReadLine();
+        }
+    }
+}
