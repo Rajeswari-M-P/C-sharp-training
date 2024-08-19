@@ -1,0 +1,52 @@
+using System;
+
+namespace Programs
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("Enter the size of the array: ");
+            int size = int.Parse(Console.ReadLine());
+
+            int[] arr = new int[size];
+
+            Console.WriteLine("Enter the elements of the array:");
+            for (int i = 0; i < size; i++)
+            {
+                arr[i] = int.Parse(Console.ReadLine());
+            }
+
+            int low = 0;//0
+            int mid = 0;//1
+            int high = arr.Length - 1;//2
+
+            while (mid <= high)
+            {
+                if (arr[mid] == 0)
+                {
+                  
+                    int temp = arr[low];
+                    arr[low] = arr[mid];
+                    arr[mid] = temp;
+                    mid++;
+                    low++;
+                }
+                else if (arr[mid] == 2)
+                {
+                    int temp = arr[mid];
+                    arr[mid] = arr[high];
+                    arr[high] = temp;
+                    high--; // After placing 2 at the high position, decrement high [0,1,2,2]
+                }
+                else
+                {
+                    mid++; // If arr[mid] is 1, just move to the next element
+                }
+            }
+
+            Console.WriteLine("Sorted array: [" + string.Join(", ", arr) + "]");
+            Console.ReadLine();
+        }
+    }
+}
