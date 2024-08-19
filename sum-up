@@ -1,0 +1,62 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace sum_up
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.WriteLine("Enter the array size");
+            int n=int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter array elements");
+            int[] arr= new int[n];
+
+            for(int i=0;i<n;i++)
+            { 
+                arr[i]=int.Parse(Console.ReadLine()); 
+            }
+            Console.WriteLine("Enter k value:");
+            int k=int.Parse(Console.ReadLine());
+
+             int count =0;
+            bool found = false;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int sum = 0;
+                for (int j = i; j < arr.Length; j++)// i and j is in same position.
+                {
+                    sum += arr[j];//0+=1  =>1
+
+                    if (sum==k)// sum == 3
+                    {
+                        count++;
+                        found = true;
+                    }
+ 
+                }
+
+            }
+            if (!found)
+            {
+                Console.WriteLine("Couldn't sum up with these numbers");
+            }
+
+
+            Console.WriteLine("Count:" + count);
+            
+            Console.ReadLine();
+            
+            
+
+
+
+
+
+        }
+    }
+}
